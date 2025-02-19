@@ -13,7 +13,7 @@ const Hero = () => {
     const [isLoaded,setIsLoaded] = useState(true)
     const [loadedVideos, setLoadedVideos] = useState(0)
 
-    const totalVideos = 3;
+    const totalVideos = 4;
     const nextVdRef = useRef(null);
     const upcomingVideoIndex = (currentIndex % totalVideos) + 1; 
     
@@ -119,7 +119,7 @@ const Hero = () => {
                         onLoadedData={handleVideoLoad}
                     />
                 </div>
-                <h1 className='special-font hero-heading absolute bottom-5 right-5 text-blue-50'>G<b>a</b>ming</h1>
+                <h1 className='special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-50'>G<b>a</b>ming</h1>
                 <div className="absolute left-0 top-0 z-40 size-full">
                     <div className="mt-24 px-5 sm:px-10">
                         <h1 className="special-font hero-heading text-blue-100">redefi<b>n</b>e</h1>

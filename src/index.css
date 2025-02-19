@@ -33,8 +33,8 @@
     .font-general { font-family: 'general', 'sans-serif'; }
     .font-robert-medium { font-family: 'robert-medium', 'sans-serif'; }
     .font-robert-bold { font-family: 'robert-bold', 'sans-serif'; }
-.border-hsla {
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    .border-hsla {
+        @apply border border-white/20;
 }
 
 .nav-hover-btn {
@@ -111,17 +111,50 @@
       }
     
       .story-img-container {
-        @apply relative md:h-dvh h-[90vh] w-full;
+        position: relative;
+        height: 90vh;
+        width: 100%;
+        @media (min-width: 768px) {
+          height: 80vh;
+        }
+        @media (min-width: 1024px) {
+          height: 70vh;
+        }
         filter: url("#flt_tag");
       }
-    
+
       .story-img-mask {
-        @apply absolute left-0 top-0 size-full overflow-hidden md:left-[20%] md:top-[-10%] md:size-4/5;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        @media (min-width: 768px) {
+          left: 20%;
+          top: -10%;
+          height: 80%;
+          width: 80%;
+        }
         clip-path: polygon(4% 0, 83% 21%, 100% 73%, 0% 100%);
       }
-    
+
       .story-img-content {
-        @apply absolute w-full md:h-dvh h-[50dvh] opacity-100 left-10 top-16 md:left-0 md:top-10 lg:left-[-300px] lg:top-[-100px];
+        position: absolute;
+        width: 100%;
+        height: 50vh;
+        opacity: 100;
+        left: 10px;
+        top: 16px;
+        @media (min-width: 768px) {
+          height: 100vh;
+          left: 0;
+          top: 10px;
+        }
+        @media (min-width: 1024px) {
+          left: -300px;
+          top: -100px;
+        }
         transform: translate3d(0, 0, 0) rotateX(0) rotateY(0) rotateZ(0) scale(1);
       }
     
@@ -149,7 +182,10 @@
         clip-path: polygon(29% 15%, 85% 30%, 50% 100%, 10% 64%);
       }
 }
-
+.active{
+    width: 5px;
+    color: #5d3fd3;
+}
 body{
     font-family:"General sans", sans-serif;
     width: 100dvh;
